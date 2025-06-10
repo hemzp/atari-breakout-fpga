@@ -1,0 +1,24 @@
+WIDTH=32;
+DEPTH=16;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+   0  : 00000000;  -- Row 0
+   1  : 00000000;  -- Row 1
+   2  : F9C8BC00;  -- Row 2
+   3  : 822DA000;  -- Row 3
+   4  : BBEAB800;  -- Row 4
+   5  : 8A28A000;  -- Row 5
+   6  : FA28BC00;  -- Row 6
+   7  : 00000000;  -- Row 7
+   8  : 00000000;  -- Row 8
+   9  : FA2FBC00;  -- Row 9
+  10  : 8A282200;  -- Row 10
+  11  : 8A2F2C00;  -- Row 11
+  12  : 89482200;  -- Row 12
+  13  : F88FA200;  -- Row 13
+  14  : 00000000;  -- Row 14
+  15  : 00000000;  -- Row 15
+END;
