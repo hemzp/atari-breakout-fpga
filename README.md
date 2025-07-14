@@ -68,19 +68,19 @@ We avoided many timing pitfalls by:
 ## Screenshots
 
 ### Game Start
-![Game Start](assets/game_start.png)  
+![Game Start](assets/Game%20Start.png)  
 *Figure 1: Initial screen with paddle and ball ready. The player presses UP to launch the ball.*
 
 ### Game Play
-![Game Play](assets/game_play.png)  
+![Game Play](assets/Game%20Play.png)  
 *Figure 2: Ball in motion, bouncing off walls and paddle. Bricks change state as they're hit.*
 
 ### Game Over
-![Game Over](assets/game_over.png)  
+![Game Over](assets/Game%20Over.png)  
 *Figure 3: "GAME OVER" screen displayed after 3 missed balls. Rendered from ROM bitmap.*
 
 ### You Win
-![You Win](assets/you_win.png)  
+![You Win](assets/You%20Win.png)  
 *Figure 4: "YOU WIN" screen displayed after all bricks are destroyed.*
 
 
