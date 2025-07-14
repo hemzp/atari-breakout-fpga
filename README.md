@@ -4,19 +4,15 @@ This project implements a fully playable version of the classic **Atari Breakout
 
 Players control a paddle to bounce a ball that breaks a 7x4 brick array. The game tracks lives, displays win/lose graphics, and showcases modular hardware design across display, game physics, and collision handling subsystems.
 
----
+## Key Features
 
-## 🧠 Key Features
+- Real-Time Graphics: 640x480 VGA display with paddle, ball, bricks, and dynamic game-end screens.
+- Collision Engine: Accurate paddle, brick, and wall collision using VGA scan-aware logic.
+- FSM-Driven Logic: Ball and display behavior modeled via finite state machines.
+- Score & Lives: Lives displayed using HEX displays. Game ends after 3 missed balls or when all bricks are cleared.
+- Memory-Mapped Graphics: "YOU WIN" and "GAME OVER" screens rendered from hand-crafted MIF-based ROMs.
 
-- **Real-Time Graphics**: 640x480 VGA display with paddle, ball, bricks, and dynamic game-end screens.
-- **Collision Engine**: Accurate paddle, brick, and wall collision using VGA scan-aware logic.
-- **FSM-Driven Logic**: Ball and display behavior modeled via finite state machines.
-- **Score & Lives**: Lives displayed using HEX displays. Game ends after 3 missed balls or when all bricks are cleared.
-- **Memory-Mapped Graphics**: "YOU WIN" and "GAME OVER" screens rendered from hand-crafted MIF-based ROMs.
-
----
-
-## 🎮 Controls
+## Controls
 
 | Action        | Control Input  |
 |---------------|----------------|
@@ -24,9 +20,7 @@ Players control a paddle to bounce a ball that breaks a 7x4 brick array. The gam
 | Move Right    | N8 Right Button|
 | Launch Ball   | N8 Up Button   |
 
----
-
-## 🧩 Architecture Overview
+## Architecture Overview
 
 The system consists of the following top-level modules:
 
@@ -40,9 +34,7 @@ The system consists of the following top-level modules:
 | `vga_controller.sv`    | VGA signal generation and pixel tracking                    |
 | `top_level.sv`         | Instantiates all modules and connects inputs/outputs        |
 
----
-
-## 📐 Design Highlights
+## Design Highlights
 
 ### Ball Physics with FSM
 
@@ -52,27 +44,19 @@ The ball operates in two states:
 
 Position is updated per VGA refresh using `x_reg`, `y_reg`, and future-state vectors `next_x`, `next_y`. Direction reverses on impact, simulating physics.
 
----
-
 ### Brick Array with Register Storage
 
 Bricks are stored as an unpacked register array. Unlike RAM-based approaches, this allows combinational access and single-cycle deletion. Each brick stores presence state and color.
-
----
 
 ### VGA-Aware Collision Detection
 
 Instead of bounding-box math, we exploit the VGA's active pixel scan to flag potential horizontal/vertical collisions. This simplifies logic and ensures real-time updates without ghost pixels.
 
----
-
 ### End-Game Graphics via ROM
 
 "YOU WIN" and "GAME OVER" screens use hand-crafted bitmaps in `.mif` files, displayed using scaled pixel ROMs and a dedicated FSM for timed rendering. Scaling logic expands 32x16 bitmaps to readable 256x128 overlays.
 
----
-
-## 🧪 Testing and Debugging
+## Testing and Debugging
 
 Modules were testbenched in simulation and validated on LabsLand FPGA access. The ball and paddle systems were verified in isolation before full integration.
 
@@ -81,13 +65,32 @@ We avoided many timing pitfalls by:
 - Using FSMs with predictable transitions
 - Minimizing overlap computation
 
----
-
-## 📷 Screenshots
+## Screenshots
 
 > _Consider uploading images like ball bouncing, paddle movement, and win/lose screens here_
 
----
+## File Structure
 
-## 📁 File Structure
+```
+├── paddle.sv
+├── ball.sv
+├── brick_array.sv
+├── victory_display.sv
+├── game_over_display.sv
+├── vga_controller.sv
+├── top_level.sv
+└── assets/
+    └── *.mif (bitmap graphics)
+```
 
+## Tools Used
+
+- SystemVerilog for all hardware logic
+- Quartus Prime for synthesis and MIF generation
+- LabsLand for FPGA deployment and testing
+- Intel DE1-SoC development board
+
+## Author
+
+Built by [Hemil Patel](https://github.com/hemzp) and Shreyas Krishnan  
+Reach out for hardware, FPGA, or embedded systems collaboration.
