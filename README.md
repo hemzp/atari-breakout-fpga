@@ -101,6 +101,7 @@ We avoided many timing pitfalls by:
 ## Tools Used
 
 - SystemVerilog for all hardware logic
+- ModelSim for verification
 - Quartus Prime for synthesis and MIF generation
 - LabsLand for FPGA deployment and testing
 - Intel DE1-SoC development board
