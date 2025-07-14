@@ -67,7 +67,22 @@ We avoided many timing pitfalls by:
 
 ## Screenshots
 
-> _Consider uploading images like ball bouncing, paddle movement, and win/lose screens here_
+### Game Start
+![Game Start](assets/game_start.png)  
+*Figure 1: Initial screen with paddle and ball ready. The player presses UP to launch the ball.*
+
+### Game Play
+![Game Play](assets/game_play.png)  
+*Figure 2: Ball in motion, bouncing off walls and paddle. Bricks change state as they're hit.*
+
+### Game Over
+![Game Over](assets/game_over.png)  
+*Figure 3: "GAME OVER" screen displayed after 3 missed balls. Rendered from ROM bitmap.*
+
+### You Win
+![You Win](assets/you_win.png)  
+*Figure 4: "YOU WIN" screen displayed after all bricks are destroyed.*
+
 
 ## File Structure
 
@@ -92,5 +107,4 @@ We avoided many timing pitfalls by:
 
 ## Author
 
-Built by [Hemil Patel](https://github.com/hemzp) and Shreyas Krishnan  
-Reach out for hardware, FPGA, or embedded systems collaboration.
+Built by [Hemil Patel](https://github.com/hemzp)
